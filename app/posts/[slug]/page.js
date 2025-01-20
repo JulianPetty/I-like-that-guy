@@ -49,14 +49,16 @@ export async function generateStaticParams() {
 
 export const revalidate = 10; // Revalidate every 10 seconds
 
+
 export default async function Page({ params }) {
     const slug = params.slug;
     const { post } = await graphcms.request(QUERY, { slug });
 
+
     return (
-        <main className="max-w-4xl mx-auto py-16">
-            <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-            <div className="flex items-center mb-8">
+        <main className="max-w-7xl mx-auto py-16 flex flex-col items-center">
+            <h1 className="text-4xl font-bold mb-4 self-start">{post.title}</h1>
+            <div className="flex items-center mb-8 self-start">
                 <img src={post.author.avatar.url} alt={post.author.name} className="w-12 h-12 rounded-full mr-4" />
                 <div>
                     <h2 className="text-lg">{post.author.name}</h2>
@@ -64,9 +66,9 @@ export default async function Page({ params }) {
                 </div>
             </div>
             <div className="mb-8">
-                <img src={post.coverPhoto.url} alt={post.title} className="w-full h-auto object-cover" />
+                <img src={post.coverPhoto.url} alt={post.title} className="w-auto h-[40vh] object-cover" />
             </div>
-            <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content.html }} />
+            <div className="post-content prose prose-lg" dangerouslySetInnerHTML={{ __html: post.content.html }} />
             <Link href="/" className="text-blue-500 mt-8 inline-block">
                 ← Back to Home
             </Link>

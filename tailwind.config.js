@@ -12,7 +12,33 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              color: '#000',
+              fontWeight: '700',
+            },
+            h2: {
+              color: '#fff7ed',
+              fontWeight: '700',
+            },
+            h3: {
+              color: '#fff7ed',
+              fontWeight: '500',
+            },
+            p: {
+              color: '#fff7ed',
+              lineHeight: '1.8',
+            },
+            a: {
+              color: '#1e90ff',
+              textDecoration: 'none',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

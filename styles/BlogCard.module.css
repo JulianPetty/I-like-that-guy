@@ -1,23 +1,25 @@
-/* Card Container */
+
 .card {
-    background-color: white;
-    color: black;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
     overflow: hidden;
     margin-bottom: 1.25rem;
     transition: transform 0.2s ease-in-out;
-    max-width: 20rem;
+    max-width: 40rem;
+    height: 34rem;
+ /* Set a fixed height */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+} 
+
+  .card:hover {
+    transform: scale(1.05);
 }
 
-.card:hover {
-    transform: translateY(-0.25rem);
-}
-
-/* Image Container */
+ /* Image Container */
 .imgContainer {
     width: 100%;
-    height: 12rem;
+    height: 25rem;
     overflow: hidden;
     position: relative;
 }
@@ -27,31 +29,53 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
+    border-radius: .5rem;
 }
 
 .imgContainer img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+}
+
+
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 /* Text Content */
 .text {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+     /* Allows the text section to grow and occupy space within the card  */
+    
+    /* Ensures title and details are spaced out  */
 }
 
 .text h2 {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #1a202c;
+    color: #e2e8f0;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+    /* Prevents the title from shrinking */
 }
 
 .details {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
     font-size: 0.875rem;
-    color: #718096;
+    color: #cbd5e0;
 }
 
 /* Author Section */
@@ -76,7 +100,6 @@
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
     .card {
-        background-color: #2d3748;
         color: white;
     }
 
