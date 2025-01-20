@@ -20,31 +20,40 @@ export default function HeroSection({ postsWithPreview }) {
     }
 
     return (
-        <div className="w-full h-full">
+        <div className="relative w-full h-[70vh] sm:h-[70vh] md:h-[80vh]">
             <Swiper
-                modules={[Autoplay, Pagination, Navigation]}
-                autoplay={{ delay: 5000 }}
-                pagination={{ clickable: true }}
-                navigation
+                modules={[Autoplay, Pagination]}
+                // autoplay={{ delay: 5000 }}
+                loop={true}
+                pagination={{
+                    clickable: true,
+                    dynamicBullets: true,
+                }}
+
                 className="w-full h-full"
             >
-                {postsWithPreview.slice(0, 3).reverse().map((post) => (
+                {postsWithPreview.slice().reverse().map((post) => (
                     <SwiperSlide key={post.id}>
                         <div
                             className="w-full h-full bg-cover bg-center"
                             style={{ backgroundImage: `url(${post.coverPhoto.url})` }}
                         >
-                            {/* Overlay */}
+                                {/* Overlay */}
                             <div className="absolute inset-0 bg-black opacity-50"></div>
-                            <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 sm:px-8">
-                                <h1 className="text-4xl sm:text-5xl font-bold mb-4">{post.title}</h1>
-                                <p className="text-lg sm:text-xl mb-6 max-w-xl text-center">{post.preview}</p>
-                                <a
-                                    href={`/posts/${post.slug}`}
-                                    className="bg-orange-500 py-3 px-6 rounded-full text-lg font-semibold hover:bg-orange-700 transition"
-                                >
-                                    Read More
-                                </a>
+                            <div className="mx-auto w-[90vw] h-full">
+                                <div className="relative z-10 flex flex-col items-start justify-end w-full h-full text-orange-50 pb-8 px-4 sm:px-8">
+                                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-md mb-4">{post.title}</h1>
+                                    <p className="text-sm sm:text-md md:text-lg mb-3 md:mb-6 max-w-xl text-[#e9e8e6]">{post.preview}</p>
+                                    <a
+                                        href={`/posts/${post.slug}`}
+                                        className="text-lg text-[#e9e8e6] font-medium hover:text-orange-500 transition underline underline-offset-1"
+                                    >
+                                    Read More →
+                                    </a>
+                                </div>
+                                <div className="relative z-10 flex flex-col items-end justify-end w-full h-full text-orange-50 pb-8 px-4 sm:px-8">
+                                    <p className="text-sm">{post.author.name}</p>
+                                </div>
                             </div>
                         </div>
                     </SwiperSlide>
