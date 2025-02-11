@@ -60,12 +60,12 @@ export default async function Home() {
         <HeroSection postsWithPreview={postsWithPreview} />
       </div>
 
-      <header className="text-orange-50 px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10 mt-8 lg:max-w-[90vw] md:max-w-3xl max-w-[90vw] m-auto">
+      <header className="text-orange-50 px-4 sm:px-6 md:px-10 lg:px-0 py-6 sm:py-8 md:py-10 mt-8 lg:max-w-[75vw] md:max-w-3xl max-w-[90vw] m-auto">
         <h1 className="text-3xl sm:text-4xl md:text-4xl lg-text-5xl font-normal">Latest Blog Posts</h1>
         <p className='text-[#e9e8e6] text-sm sm:text-md md:text-md lg:text-lg pt-4'>Read articles covering a range of topics, from philosophy, to art, technology and more. Here lie the general ponderings of humanity.</p>
       </header>
 
-      <main className="pt-4 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:max-w-[90vw] md:max-w-3xl max-w-[90vw] mx-auto w-full place-items-center justify-between" id='blog'>
+      <main className="pt-4 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:max-w-[75vw] md:max-w-3xl max-w-[90vw] mx-auto w-full place-items-center justify-between" id='blog'>
         {postsWithPreview.slice().reverse().map((post) => (
           <BlogCard
             key={post.id}

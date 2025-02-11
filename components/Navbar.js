@@ -11,7 +11,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="absolute top-0 left-0 lg:w-[90%] lg:mx-[5%] w-full p-4 pr-8 xl:p-4 z-50">
+        <div className="absolute top-0 left-0 lg:w-[80%] lg:mx-[10%] w-full p-4 pr-8 xl:p-4 z-50">
             <nav className="flex items-center justify-between text-orange-50 text-xl lg:text-2xl font-normal bg-transparent">
                 {/* Left-aligned Logo */}
                 <div className="logo">

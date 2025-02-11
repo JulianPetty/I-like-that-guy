@@ -1,4 +1,3 @@
-
 .card {
     color: white;
     overflow: hidden;
@@ -56,9 +55,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-     /* Allows the text section to grow and occupy space within the card  */
-    
-    /* Ensures title and details are spaced out  */
+    justify-content: space-between; /* This ensures proper spacing between title and details */
 }
 
 .text h2 {
@@ -67,8 +64,20 @@
     color: #e2e8f0;
     margin-bottom: 1rem;
     flex-shrink: 0;
-    /* Prevents the title from shrinking */
+    max-height: 4.5em; /* Allows for up to 3 lines of text at 1.5 line height */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits text to 3 lines */
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
 }
+
+@media (min-width: 1024px) {
+    .text h2 {
+        font-size: 1.5rem;
+    }
+}
+
 
 .details {
     display: flex;
@@ -76,6 +85,8 @@
     align-items: center;
     font-size: 0.875rem;
     color: #cbd5e0;
+    margin-top: auto; /* Pushes the details to the bottom */
+    flex-shrink: 0; /* Prevents the details from shrinking */
 }
 
 /* Author Section */
