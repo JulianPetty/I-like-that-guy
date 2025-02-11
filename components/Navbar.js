@@ -19,7 +19,7 @@ const Navbar = () => {
                         <img
                             src="/assets/logoBlog.png"
                             alt="Logo"
-                            className="h-16 sm:h-24 w-full cursor-pointer"
+                            className="h-12 sm:h-16 w-auto object-contain"
                         />
                     </Link>
                 </div>

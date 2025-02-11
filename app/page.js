@@ -35,7 +35,7 @@ const QUERY = gql`
 
 export const revalidate = 10; // Revalidate every 10 seconds
 
-function generatePreview(htmlContent, wordLimit = 50) {
+function generatePreview(htmlContent, wordLimit = 40) {
   const textContent = htmlContent.replace(/<[^>]+>/g, ''); // Remove HTML tags
   const decodedText = he.decode(textContent); // Decode HTML entitie
   const words = decodedText.split(/\s+/); // Split into words
