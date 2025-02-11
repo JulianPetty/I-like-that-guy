@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "I Like That Guy",
   description: "Discussion and ponderings of guys we like, or maybe not so much?",
+  icons: {
+    icon: '/church-solid.svg',
+  },
 };
 
 export default function RootLayout({ children }) {
