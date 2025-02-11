@@ -4,8 +4,7 @@
     margin-bottom: 1.25rem;
     transition: transform 0.2s ease-in-out;
     max-width: 40rem;
-    height: 34rem;
- /* Set a fixed height */
+    height: 32rem; /* Set fixed height */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -18,9 +17,16 @@
  /* Image Container */
 .imgContainer {
     width: 100%;
-    height: 25rem;
+    height: 20rem; /* Fixed height */
     overflow: hidden;
     position: relative;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+@media (min-height: 1000px) {
+    .imgContainer {
+        height: 25rem; /* Return to original height on taller screens */
+    }
 }
 
 .imgContainer img {
@@ -54,7 +60,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    height: 12rem; /* Fixed height to match card - image height */
     justify-content: space-between; /* This ensures proper spacing between title and details */
 }
 
@@ -63,7 +69,7 @@
     font-weight: 600;
     color: #e2e8f0;
     margin-bottom: 1rem;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent title from shrinking */
     max-height: 4.5em; /* Allows for up to 3 lines of text at 1.5 line height */
     overflow: hidden;
     display: -webkit-box;
@@ -85,8 +91,8 @@
     align-items: center;
     font-size: 0.875rem;
     color: #cbd5e0;
-    margin-top: auto; /* Pushes the details to the bottom */
-    flex-shrink: 0; /* Prevents the details from shrinking */
+    margin-top: auto; /* Push to bottom */
+    flex-shrink: 0; /* Prevent details from shrinking */
 }
 
 /* Author Section */
