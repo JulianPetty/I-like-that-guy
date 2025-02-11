@@ -23,7 +23,7 @@ export default function HeroSection({ postsWithPreview }) {
         <div className="relative w-full h-[70vh] sm:h-[70vh] md:h-[80vh]">
             <Swiper
                 modules={[Autoplay, Pagination]}
-                // autoplay={{ delay: 5000 }}
+                autoplay={{ delay: 5000 }}
                 loop={true}
                 pagination={{
                     clickable: true,
