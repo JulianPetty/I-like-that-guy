@@ -15,8 +15,9 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            color: '#fff7ed',
             h1: {
-              color: '#000',
+              color: '#fff7ed',
               fontWeight: '700',
             },
             h2: {
@@ -27,13 +28,14 @@ module.exports = {
               color: '#fff7ed',
               fontWeight: '500',
             },
-            p: {
+            strong: {
               color: '#fff7ed',
-              lineHeight: '1.8',
             },
             a: {
-              color: '#1e90ff',
-              textDecoration: 'none',
+              color: '#f97316',
+              '&:hover': {
+                color: '#fb923c',
+              },
             },
           },
         },

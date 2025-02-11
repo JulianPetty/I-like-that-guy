@@ -56,22 +56,53 @@ export default async function Page({ params }) {
 
 
     return (
-        <main className="max-w-7xl mx-auto py-16 flex flex-col items-center">
-            <h1 className="text-4xl font-bold mb-4 self-start">{post.title}</h1>
-            <div className="flex items-center mb-8 self-start">
-                <img src={post.author.avatar.url} alt={post.author.name} className="w-12 h-12 rounded-full mr-4" />
-                <div>
-                    <h2 className="text-lg">{post.author.name}</h2>
-                    <p className="text-gray-600">{new Date(post.datePublished).toLocaleDateString()}</p>
+        <main className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+            <article className="max-w-none mx-auto">
+                {/* Header Section */}
+                <header className="max-w-5xl mx-auto mb-16">
+                    <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-orange-50">
+                        {post.title}
+                    </h1>
+                    <div className="flex items-center mb-8">
+                        <img 
+                            src={post.author.avatar.url} 
+                            alt={post.author.name} 
+                            className="w-12 h-12 rounded-full mr-4" 
+                        />
+                        <div>
+                            <h2 className="text-lg text-orange-50">{post.author.name}</h2>
+                            <p className="text-gray-400">
+                                {new Date(post.datePublished).toLocaleDateString()}
+                            </p>
+                        </div>
+                    </div>
+                    <div className="w-full">
+                        <img 
+                            src={post.coverPhoto.url} 
+                            alt={post.title} 
+                            className="w-full h-[50vh] object-cover rounded-lg" 
+                        />
+                    </div>
+                </header>
+
+                {/* Article Content */}
+                <div className="max-w-4xl mx-auto">
+                    <div 
+                        className="prose prose-lg md:prose-xl prose-invert mx-auto"
+                        dangerouslySetInnerHTML={{ __html: post.content.html }} 
+                    />
                 </div>
-            </div>
-            <div className="mb-8">
-                <img src={post.coverPhoto.url} alt={post.title} className="w-auto h-[40vh] object-cover" />
-            </div>
-            <div className="post-content prose prose-lg" dangerouslySetInnerHTML={{ __html: post.content.html }} />
-            <Link href="/" className="text-blue-500 mt-8 inline-block">
-                ← Back to Home
-            </Link>
+
+                {/* Back Button */}
+                <div className="max-w-4xl mx-auto mt-16">
+                    <Link 
+                        href="/" 
+                        className="text-orange-500 hover:text-orange-400 transition-colors duration-200"
+                    >
+                        ← Back to Home
+                    </Link>
+                </div>
+            </article>
         </main>
     );
     

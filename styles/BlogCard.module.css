@@ -4,7 +4,7 @@
     margin-bottom: 1.25rem;
     transition: transform 0.2s ease-in-out;
     max-width: 40rem;
-    height: 32rem; /* Set fixed height */
+    height: 36rem; /* Set fixed height */
     display: flex;
     flex-direction: column;
     width: 100%;
