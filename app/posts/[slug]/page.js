@@ -51,7 +51,8 @@ export const revalidate = 10; // Revalidate every 10 seconds
 
 
 export default async function Page({ params }) {
-    const slug = params.slug;
+    const resolvedParams = await params;
+    const slug = resolvedParams.slug;
     const { post } = await graphcms.request(QUERY, { slug });
 
 
@@ -86,7 +87,7 @@ export default async function Page({ params }) {
                 </header>
 
                 {/* Article Content */}
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-5xl mx-auto">
                     <div 
                         className="prose prose-lg md:prose-xl prose-invert mx-auto"
                         dangerouslySetInnerHTML={{ __html: post.content.html }} 
@@ -94,7 +95,7 @@ export default async function Page({ params }) {
                 </div>
 
                 {/* Back Button */}
-                <div className="max-w-4xl mx-auto mt-16">
+                <div className="max-w-5xl mx-auto mt-16">
                     <Link 
                         href="/" 
                         className="text-orange-500 hover:text-orange-400 transition-colors duration-200"
